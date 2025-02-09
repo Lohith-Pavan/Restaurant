@@ -41,18 +41,18 @@ public class Owner3 {
 
 	void ownerFunctions() {
 		System.out.print("Enter 1 to add item , Enter 2 to remove item , Enter 3 to change price , Enter 4 to exit : ");
-		int menu = sc.nextInt();
+		String menu = sc.next();
 		switch (menu) {
-		case 1:
+		case "1":
 			addItem();
 			break;
-		case 2:
+		case "2":
 			removeItem();
 			break;
-		case 3:
+		case "3":
 			changePrice();
 			break;
-		case 4:
+		case "4":
 			exit();
 			break;
 		default:
@@ -64,11 +64,11 @@ public class Owner3 {
 
 	void addItem() {
 		System.out.print("Enter food Item : ");
-		String Item = sc.next();
+		String Item = sc.nextLine();
 		if (menu.containsKey(Item.toLowerCase())) {
 			System.out.println(Item + " is in Menu");
 			System.out.print("Do you want to add more items to menu: ");
-			String decision = sc.next();
+			String decision = sc.nextLine();
 			if (decision.toLowerCase().equals("yes")) {
 				addItem();
 			} else if (decision.toLowerCase().equals("no")) {
@@ -80,7 +80,7 @@ public class Owner3 {
 			menu.put(Item.toLowerCase(), Price);
 			System.out.println(Item + " added successfully");
 			System.out.print("Do you want to add more items to menu: ");
-			String decision = sc.next();
+			String decision = sc.nextLine();
 			if (decision.toLowerCase().equals("yes")) {
 				addItem();
 			} else if (decision.toLowerCase().equals("no")) {
@@ -91,12 +91,12 @@ public class Owner3 {
 
 	void removeItem() {
 		System.out.print("Enter food Item : ");
-		String Item = sc.next();
+		String Item = sc.nextLine();
 		if (menu.containsKey(Item.toLowerCase())) {
 			menu.remove(Item);
 			System.out.println(Item + " removed successfully");
 			System.out.print("Do you want to remove more items from menu: ");
-			String decision = sc.next();
+			String decision = sc.nextLine();
 			if (decision.toLowerCase().equals("yes")) {
 				removeItem();
 			} else if (decision.toLowerCase().equals("no")) {
@@ -106,7 +106,7 @@ public class Owner3 {
 		} else {
 			System.out.println(Item + " is not present in menu");
 			System.out.print("Do you want to remove more items from menu: ");
-			String decision = sc.next();
+			String decision = sc.nextLine();
 			if (decision.toLowerCase().equals("yes")) {
 				removeItem();
 			} else if (decision.toLowerCase().equals("no")) {
@@ -117,7 +117,7 @@ public class Owner3 {
 
 	void changePrice() {
 		System.out.print("Enter food Item : ");
-		String item = sc.next();
+		String item = sc.nextLine();
 		if (menu.containsKey(item)) {
 			System.out.print("Enter New Price : ");
 			double price = sc.nextDouble();
