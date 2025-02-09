@@ -8,19 +8,19 @@ public class Restaurant {
     	Owner3 ob = new Owner3();
 		Customer3 op = new Customer3();
     	System.out.print("Enter 1 for admin and 2 for customer and 3 for exit: ");
-		int person = sc.nextInt();
+		String person = sc.next();
 		switch (person) {
-		case 1:
+		case "1":
 			ob.owner();
 			if(ob.flag == true) {	
 				restaurant();
 			}
 			break;
-		case 2:
+		case "2":
 			op.customerFunctions();
 			restaurant();
 			break;
-		case 3:
+		case "3":
 			System.out.println("------Session terminated-------");
 			break;
 		default:
@@ -29,6 +29,7 @@ public class Restaurant {
 		}
     }
 	public static void main(String args[]) {
+		
 		Restaurant res = new Restaurant();
 		res.restaurant();
 	}
